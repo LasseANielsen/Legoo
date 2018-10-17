@@ -32,7 +32,7 @@ public class OrderMapper {
         }
     }
 
-   public static int countOrders(int id) throws OrderException {
+    public static int countOrders(int id) throws OrderException {
         int count = 0;
         try {
             Connection con = DBConnector.connection();
@@ -116,5 +116,47 @@ public class OrderMapper {
             throw new OrderException(ex.getMessage());
         }
         return orders;
+    }
+
+    static void shipOrder(int id) throws OrderException {
+        Order order = getOrderById(id);
+        if (order == null) {
+            throw new OrderException("That order does not exist!");
+        } else if ("true".equals(order.isShipped())) {
+            throw new OrderException("That order is shipped!");
+        } else {
+            try {
+                Connection con = DBConnector.connection();
+                String SQL = "UPDATE Orders SET shipped = 'true' WHERE id = ?";
+                PreparedStatement ps = con.prepareStatement(SQL);
+                ps.setInt(1, id);
+                ps.executeUpdate();
+            } catch (SQLException | ClassNotFoundException ex) {
+                throw new OrderException(ex.getMessage());
+            }
+        }
+    }
+
+    private static Order getOrderById(int id) throws OrderException {
+        try {
+            Connection con = DBConnector.connection();
+            String SQL = "SELECT * FROM Orders WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet ids = ps.executeQuery();
+            while (ids.next()) {
+                int user_id = ids.getInt("user_id");
+                int length = ids.getInt("length");
+                int width = ids.getInt("width");
+                int height = ids.getInt("height");
+                String shipped = ids.getString("shipped");
+                Order order = new Order(user_id, length, width, height, shipped);
+                order.setId(id);
+                return order;
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new OrderException(ex.getMessage());
+        }
+        return null;
     }
 }

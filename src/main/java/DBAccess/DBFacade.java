@@ -10,17 +10,17 @@ import java.util.List;
 public class DBFacade {
 
     public static User SignIn(String email, String password) throws LoginSampleException {
-        
+
         return UserMapper.login(email, password);
     }
-    
-    public static User user (User user) throws LoginSampleException {
-        
-       UserMapper.createUser(user);
-       return user;
+
+    public static User user(User user) throws LoginSampleException {
+
+        UserMapper.createUser(user);
+        return user;
     }
-    
-    public static void createOrder (Order order) throws OrderException {
+
+    public static void createOrder(Order order) throws OrderException {
         OrderMapper.createOrder(order);
     }
 
@@ -46,5 +46,9 @@ public class DBFacade {
 
     public static List<User> getAllUsers() throws UserException {
         return UserMapper.getAllUsers();
+    }
+
+    public static void sendOrder(int id) throws OrderException {
+        OrderMapper.shipOrder(id);
     }
 }

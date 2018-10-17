@@ -54,4 +54,8 @@ public class LogicFacade {
         return DBFacade.getAllUsers();
     }
 
+    public static void sendOrder(int id) throws OrderException {
+        DBFacade.sendOrder(id);
+    }
+
 }
