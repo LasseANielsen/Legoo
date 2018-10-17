@@ -25,7 +25,7 @@ public class HouseMath {
 
     public HashMap<String, Integer> makeHouse(int length, int width, int height) {
         counterRestart();
-        for (int i = 0; i <= height; i++) {
+        for (int i = 1; i <= height; i++) {
             if (i % 2 == 0) {
                 totalWidth(width);
                 totalLength(length - 4);
