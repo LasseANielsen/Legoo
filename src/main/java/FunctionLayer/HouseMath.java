@@ -43,14 +43,14 @@ public class HouseMath {
         for (int i = 0; i < length; i++) {
             if (i + 4 <= length) {
                 int newlength = counter.get("2x4");
-                counter.put("2x4", newlength++);
+                counter.put("2x4", ++newlength);
                 i = i + 4;
             } else if (i + 2 <= length) {
                 int newlength = counter.get("2x2");
-                counter.put("2x2", newlength++);
+                counter.put("2x2", ++newlength);
             } else if (i + 1 <= length) {
                 int newlength = counter.get("1x2");
-                counter.put("1x2", newlength++);
+                counter.put("1x2", ++newlength);
             }
         }
     }
@@ -59,14 +59,14 @@ public class HouseMath {
         for (int i = 0; i < width; i++) {
             if (i + 4 <= width) {
                 int newlength = counter.get("2x4");
-                counter.put("2x4", newlength++);
+                counter.put("2x4", ++newlength);
                 i = i + 4;
             } else if (i + 2 <= width) {
                 int newlength = counter.get("2x2");
-                counter.put("2x2", newlength++);
+                counter.put("2x2", ++newlength);
             } else if (i + 1 <= width) {
                 int newlength = counter.get("1x2");
-                counter.put("1x2", newlength++);
+                counter.put("1x2", ++newlength);
             }
         }
     }
