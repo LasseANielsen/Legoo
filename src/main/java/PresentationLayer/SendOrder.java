@@ -8,9 +8,7 @@ public class SendOrder extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-        try {
-            
-        }
-         }
-    
+        return "index";
+
+    }
 }
