@@ -19,6 +19,6 @@ public class PlaceOrder extends Command {
         Order order = new Order(userId, length, width, height, "false");
         LogicFacade.placeOrder(order);
        
-        return "cpage";
+        return "customerpage";
     }
 }
