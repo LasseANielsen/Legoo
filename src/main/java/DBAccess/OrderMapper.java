@@ -13,7 +13,7 @@ public class OrderMapper {
     public static void createOrder(Order order) throws OrderException {
         try {
             Connection con = DBConnector.connection();
-            String SQL = "INSERT INTO Orders (user_id, length, width, height, shipped) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO Order (userid, length, width, height, shipped) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, order.getUser_id());
             ps.setInt(2, order.getLength());
