@@ -7,8 +7,8 @@
     </head>
     <body>
         <h1>Choose your bricks carefully</h1>
-        <form action="FrontController" method="POST" name="contruct">
-            <input name="command" type="hidden" value="contruct" />
+        <form action="FrontController" method="POST" name="construct">
+            <input name="command" type="hidden" value="construct" />
             House length:<br /> 
             <input min="8" name="length" type="number" value="12" /> 
             <br /> <br /> 
