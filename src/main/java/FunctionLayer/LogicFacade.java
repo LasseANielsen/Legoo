@@ -1,6 +1,8 @@
 package FunctionLayer;
 
+import DBAccess.DBFacade;
 import DBAccess.UserMapper;
+import java.util.HashMap;
 
 /**
  * The purpose of LogicFacade is to...
@@ -17,5 +19,14 @@ public class LogicFacade {
         UserMapper.createUser( user );
         return user;
     }
+    
+    public static HashMap<String, Integer> createBlockHolder(int length, int width, int height){
+        return HouseMath.math().makeHouse(length, width, height);
+    }
+    
+    public static void placeOrder(Order order) throws OrderException {
+        DBFacade.createOrder(order);
+    }
+            
 
 }

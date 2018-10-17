@@ -3,6 +3,15 @@ package FunctionLayer;
 import java.util.HashMap;
 
 public class HouseMath {
+    
+    private static HouseMath singleton;
+    
+    public static HouseMath math(){
+        if(singleton == null){
+            singleton = new HouseMath();
+        }
+        return singleton;
+    }
 
     HashMap<String, Integer> counter = new HashMap();
 
