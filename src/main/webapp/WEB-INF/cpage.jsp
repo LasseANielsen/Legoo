@@ -19,27 +19,32 @@
             <input min="2" name="height" type="number" value="4" /> 
             <br /> <br /> 
             <input type="submit" value="Generate list" />
-            <br /> <br /><br /> <br /><br /> <br />
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Bricks</td>
-                        <td>Count</td>
-                    </tr>
-                    <tr>
-                        <td>2x4</td>
-                        <td><%=request.getSession().getAttribute("4x2Count")%></td>
-                    </tr>
-                    <tr>
-                        <td>2x2</td>
-                        <td><%=request.getSession().getAttribute("2x2Count")%></td>
-                    </tr>
-                    <tr>
-                        <td>1x2</td>
-                        <td><%=request.getSession().getAttribute("1x2Count")%></td>
-                    </tr>
-                </tbody>
-            </table>
+
+        </form>
+        <br /> <br /><br /> <br /><br /> <br />
+        <table>
+            <tbody>
+                <tr>
+                    <td>Bricks</td>
+                    <td>Count</td>
+                </tr>
+                <tr>
+                    <td>2x4</td>
+                    <td><%=request.getSession().getAttribute("4x2Count")%></td>
+                </tr>
+                <tr>
+                    <td>2x2</td>
+                    <td><%=request.getSession().getAttribute("2x2Count")%></td>
+                </tr>
+                <tr>
+                    <td>1x2</td>
+                    <td><%=request.getSession().getAttribute("1x2Count")%></td>
+                </tr>
+            </tbody>
+        </table>
+        <form name="order" action="FrontController" method="POST">
+            <input type="hidden" name="command" value="order">
+            <input type="submit" value="Next step">
         </form>
     </body>
 </html>
