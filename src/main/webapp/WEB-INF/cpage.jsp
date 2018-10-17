@@ -30,15 +30,15 @@
                 </tr>
                 <tr>
                     <td>2x4</td>
-                    <td><%=request.getSession().getAttribute("4x2Count")%></td>
+                    <td><%=request.getSession().getAttribute("2x4")%></td>
                 </tr>
                 <tr>
                     <td>2x2</td>
-                    <td><%=request.getSession().getAttribute("2x2Count")%></td>
+                    <td><%=request.getSession().getAttribute("2x2")%></td>
                 </tr>
                 <tr>
                     <td>1x2</td>
-                    <td><%=request.getSession().getAttribute("1x2Count")%></td>
+                    <td><%=request.getSession().getAttribute("1x2")%></td>
                 </tr>
             </tbody>
         </table>
