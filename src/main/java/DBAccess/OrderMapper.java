@@ -127,7 +127,7 @@ public class OrderMapper {
         } else {
             try {
                 Connection con = DBConnector.connection();
-                String SQL = "UPDATE Orders SET shipped = 'true' WHERE id = ?";
+                String SQL = "UPDATE Order SET shipped = 'true' WHERE id = ?";
                 PreparedStatement ps = con.prepareStatement(SQL);
                 ps.setInt(1, id);
                 ps.executeUpdate();
@@ -140,7 +140,7 @@ public class OrderMapper {
     private static Order getOrderById(int id) throws OrderException {
         try {
             Connection con = DBConnector.connection();
-            String SQL = "SELECT * FROM Orders WHERE id = ?";
+            String SQL = "SELECT * FROM Order WHERE id = ?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ResultSet ids = ps.executeQuery();
