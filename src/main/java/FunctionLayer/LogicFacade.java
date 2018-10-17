@@ -3,6 +3,7 @@ package FunctionLayer;
 import DBAccess.DBFacade;
 import DBAccess.UserMapper;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * The purpose of LogicFacade is to...
@@ -26,6 +27,30 @@ public class LogicFacade {
     
     public static void placeOrder(Order order) throws OrderException {
         DBFacade.createOrder(order);
+    }
+
+    public static int getOrderCount(int id) throws OrderException {
+        return DBFacade.getOrderCount(id);
+    }
+
+    public static List<Order> getAllOrdersByUser(int id) throws OrderException {
+        return DBFacade.getAllOrdersByUser(id);
+    }
+
+    public static int getAllOrderCount() throws OrderException {
+        return DBFacade.getAllOrderCount();
+    }
+
+    public static List<Order> getAllOrders() throws OrderException {
+        return DBFacade.getAllOrders();
+    }
+
+    public static int getAllUserCount() throws UserException {
+        return DBFacade.getAllUserCount();
+    }
+
+    public static List<User> getAllUsers() throws UserException {
+        return DBFacade.getAllUsers();
     }
             
 
