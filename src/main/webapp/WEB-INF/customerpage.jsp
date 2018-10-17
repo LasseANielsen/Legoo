@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer home page</title>
+        <link href="Style/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Hello <%=request.getParameter( "email" )%> </h1>

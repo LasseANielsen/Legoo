@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome page</title>
+        <link href="Style/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Welcome to Sem 2</h1>
