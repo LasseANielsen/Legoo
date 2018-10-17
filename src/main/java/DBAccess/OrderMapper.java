@@ -36,7 +36,7 @@ public class OrderMapper {
         int count = 0;
         try {
             Connection con = DBConnector.connection();
-            String SQL = "SELECT COUNT(id) AS count FROM Order WHERE user_id = ?";
+            String SQL = "SELECT COUNT(id) AS count FROM `Order` WHERE userid = ?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ResultSet ids = ps.executeQuery();
@@ -55,7 +55,7 @@ public class OrderMapper {
         List<Order> orders = new ArrayList<>();
         try {
             Connection con = DBConnector.connection();
-            String SQL = "SELECT * FROM Order WHERE user_id = ?";
+            String SQL = "SELECT * FROM Order WHERE userid = ?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ResultSet ids = ps.executeQuery();
@@ -98,16 +98,16 @@ public class OrderMapper {
         List<Order> orders = new ArrayList<>();
         try {
             Connection con = DBConnector.connection();
-            String SQL = "SELECT * FROM Orders";
+            String SQL = "SELECT * FROM Order";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet ids = ps.executeQuery();
             while (ids.next()) {
                 int id = ids.getInt("id");
-                int user_id = ids.getInt("user_id");
+                int user_id = ids.getInt("userid");
                 int length = ids.getInt("length");
                 int width = ids.getInt("width");
                 int height = ids.getInt("height");
-                String shipped = ids.getString("shipped");
+                String shipped = ids.getString("sent");
                 Order order = new Order(user_id, length, width, height, shipped);
                 order.setId(id);
                 orders.add(order);
